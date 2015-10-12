@@ -1,0 +1,486 @@
+<!DOCTYPE>
+<html>
+	<head>
+			<title>Alphabet Game</title>
+			<style>
+		body {
+			padding:0;
+			margin:0;
+			overflow-x: hidden;
+		}
+		#image {
+			position:relative;
+			left: 680px; top: 120px;
+		}
+		#text {
+			position:absolute;
+			left: 240px; top: 180px;
+			color:#001f3f;
+			font-family:verdana;
+			font-size:30;
+		}
+		#background { 
+			width: 100%; 
+			height: 100%; 
+			background-image: url("bg1.jpg");
+			background-position: 0px 0px;
+			background-size:100% 100%;
+			background-repeat: repeat-x;
+		}            
+		#next {
+			position:relative;
+			left: 950px; top: 500px;
+			width: 200px;
+		}
+		#previous {
+			position:relative;
+			left: 230px; top: 450px;
+			width: 200px;
+		}
+		#back {
+			position:absolute;
+			left: 10px; top: 75px;
+			width: 200px;
+		}
+		#start {
+			position:absolute;
+			left: 10px; top: 20px;
+			width: 200px;
+		}
+		#option1 {
+			position:absolute;
+			left: 240px; top: 250px;
+			width: 200px;
+		}
+		#option2 {
+			position:absolute;
+			left: 240px; top: 310px;
+			width: 200px;
+		}
+		#option3 {
+			position:absolute;
+			left: 240px; top: 370px;
+			width: 200px;
+		}
+		
+		.myButton:hover {
+		background-color:green;
+		}
+		.circle_green { 
+				position absolute;
+                width:10%;
+                padding:60px 70px;
+                margin:0 auto;
+                border:2px solid #a1a1a1;
+                border-radius:100%;
+                background-color:navy;
+            }
+		#rectangle {
+			width: 200px;
+			height: 100px;
+			background: navy;
+		}
+		
+		#egg {
+		   display:block;
+		   width: 126px;
+		   height: 180px;
+		   background-color: black;
+		   -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+		   border-radius:         50%  50%  50%  50%  / 60%   60%   40%  40%;
+			}
+		
+		
+
+		.myButton {
+			-moz-box-shadow:inset 0px 0px 15px 3px #23395e;
+			-webkit-box-shadow:inset 0px 0px 15px 3px #23395e;
+			box-shadow:inset 0px 0px 15px 3px #23395e;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2e466e), color-stop(1, #415989));
+			background:-moz-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-webkit-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-o-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-ms-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e466e', endColorstr='#415989',GradientType=0);
+			background-color:#2e466e;
+			-moz-border-radius:17px;
+			-webkit-border-radius:17px;
+			border-radius:17px;
+			border:1px solid #1f2f47;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-weight: bold;
+			font-size:16px;
+			padding:16px 30px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #263666;
+
+		}
+		.correct {
+			-moz-box-shadow:inset 0px 0px 15px 3px #23395e;
+			-webkit-box-shadow:inset 0px 0px 15px 3px #23395e;
+			box-shadow:inset 0px 0px 15px 3px #23395e;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2e466e), color-stop(1, #415989));
+			background:-moz-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-webkit-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-o-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-ms-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e466e', endColorstr='#415989',GradientType=0);
+			background-color:#2e466e;
+			-moz-border-radius:17px;
+			-webkit-border-radius:17px;
+			border-radius:17px;
+			border:1px solid #1f2f47;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-weight: bold;
+			font-size:16px;
+			padding:16px 30px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #263666;
+
+		}
+		.wrong {
+			-moz-box-shadow:inset 0px 0px 15px 3px #23395e;
+			-webkit-box-shadow:inset 0px 0px 15px 3px #23395e;
+			box-shadow:inset 0px 0px 15px 3px #23395e;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2e466e), color-stop(1, #415989));
+			background:-moz-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-webkit-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-o-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-ms-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e466e', endColorstr='#415989',GradientType=0);
+			background-color:#2e466e;
+			-moz-border-radius:17px;
+			-webkit-border-radius:17px;
+			border-radius:17px;
+			border:1px solid #1f2f47;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-weight: bold;
+			font-size:16px;
+			padding:16px 30px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #263666;
+
+		}
+		
+		 .correct:hover {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, 32cd32), color-stop(1, #2e466e));
+			background:-moz-linear-gradient(top, #32cd32 5%, #2e466e 100%);
+			background:-webkit-linear-gradient(top, #32cd32 5%, #2e466e 100%);
+			background:-o-linear-gradient(top, #32cd32 5%, #2e466e 100%);
+			background:-ms-linear-gradient(top, #32cd32 5%, #2e466e 100%);
+			background:linear-gradient(to bottom, #32cd32 5%, #2e466e 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#32cd32', endColorstr='#32cd32',GradientType=0);
+			background-color:#32cd32;
+		} 
+		.wrong:hover {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, 32cd32), color-stop(1, #2e466e));
+			background:-moz-linear-gradient(top, #ff4500 5%, #2e466e 100%);
+			background:-webkit-linear-gradient(top, #ff4500 5%, #2e466e 100%);
+			background:-o-linear-gradient(top, #ff4500 5%, #2e466e 100%);
+			background:-ms-linear-gradient(top, #ff4500 5%, #2e466e 100%);
+			background:linear-gradient(to bottom, #ff4500 5%, #2e466e 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#32cd32', endColorstr='#ff4500',GradientType=0);
+			background-color:#ff4500;
+		} 
+		
+	.row{
+		display: none;
+	}
+
+	.container div:target{
+		display: block;
+	}
+
+		</style>
+	</head>
+	<body>
+		
+	<div id="background">
+		
+		<div id="start"><a href="#A" class="myButton">Start</a></div>
+		<div id="back"><a href="home.html" class="myButton">Back</a></div>
+		
+		<div class="container">
+			<div class="row" id="A">
+				<div id="option1"><a href="#A" class="wrong">B</a></div>
+				<div id="option2"><a href="#A" class="wrong">C</a></div>
+				<div id="option3"><a href="#A" class="correct">A</a></div>
+				<div id="next"><a href="#B" class="myButton">Next</a></div>
+				<div id="previous"><a href="#Z" class="myButton">Previous</a></div>
+				<div id="image"><img src="a.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="B">
+				<div id="option1"><a href="#B" class="wrong">A</a></div>
+				<div id="option2"><a href="#B" class="correct">B</a></div>
+				<div id="option3"><a href="B" class="wrong">C</a></div>
+				<div id="next"><a href="#C"class="myButton">Next</a></div>
+				<div id="previous"><a href="#A" class="myButton">Previous</a></div>
+				<div id="image"><img src="b.png" height="180" width="180"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="C">
+				<div id="option1"><a href="#C" class="wrong">D</a></div>
+				<div id="option2"><a href="#C"class="correct">C</a></div>
+				<div id="option3"><a href="#C" class="wrong">A</a></div>
+				<div id="next"><a href="#D" class="myButton">Next</a></div>
+				<div id="previous"><a href="#B" class="myButton">Previous</a></div>
+				<div id="image">
+							<table>
+							<tr>
+								<td>
+									<div class="circle_green"></div>
+								</td>
+							</tr>
+							</table>
+				</div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="D">
+				<div id="option1"><a href="#D" class="correct">D</a></div>
+				<div id="option2"><a href="#D" class="wrong">F</a></div>
+				<div id="option3"><a href="#D" class="wrong">H</a></div>
+				<div id="next"><a href="#E" class="myButton">Next</a></div>
+				<div id="previous"><a href="#C" class="myButton">Previous</a></div>
+				<div id="image"><img src="d.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="E">
+				<div id="option1"><a href="#E" class="wrong">K</a></div>
+				<div id="option2"><a href="#E"class="correct">E</a></div>
+				<div id="option3"><a href="#E" class="wrong">V</a></div>
+				<div id="next"><a href="#F"class="myButton">Next</a></div>
+				<div id="previous"><a href="#D" class="myButton">Previous</a></div>
+				<div id="image"><div id="egg"></div></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="F">
+				<div id="option1"><a href="#F" class="wrong">E</a></div>
+				<div id="option2"><a href="#F" class="wrong">S</a></div>
+				<div id="option3"><a href="#F"class="correct">F</a></div>
+				<div id="next"><a href="#G"class="myButton">Next</a></div>
+				<div id="previous"><a href="#E" class="myButton">Previous</a></div>
+				<div id="image"><img src="f.png" height="230" width="230"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="G">
+				<div id="option1"><a href="#G" class="wrong">D</a></div>
+				<div id="option2"><a href="#G" class="wrong">Z</a></div>
+				<div id="option3"><a href="#G"class="correct">G</a></div>
+				<div id="next"><a href="#H"class="myButton">Next</a></div>
+				<div id="previous"><a href="#F" class="myButton">Previous</a></div>
+				<div id="image"><img src="g.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="H">
+				<div id="option1"><a href="#H"class="correct">H</a></div>
+				<div id="option2"><a href="#H" class="wrong">I</a></div>
+				<div id="option3"><a href="#H" class="wrong">L</a></div>
+				<div id="next"><a href="#I"class="myButton">Next</a></div>
+				<div id="previous"><a href="#G" class="myButton">Previous</a></div>
+				<div id="image"><img src="h.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="I">
+				<div id="option1"><a href="#I" class="wrong">O</a></div>
+				<div id="option2"><a href="#I" class="wrong">X</a></div>
+				<div id="option3"><a href="#I"class="correct">I</a></div>
+				<div id="next"><a href="#J"class="myButton">Next</a></div>
+				<div id="previous"><a href="#H" class="myButton">Previous</a></div>
+				<div id="image"><img src="i.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="J">
+				<div id="option1"><a href="#J" class="wrong">L</a></div>
+				<div id="option2"><a href="#J"class="correct">J</a></div>
+				<div id="option3"><a href="#J" class="wrong">M</a></div>
+				<div id="next"><a href="#K"class="myButton">Next</a></div>
+				<div id="previous"><a href="#I" class="myButton">Previous</a></div>
+				<div id="image"><img src="j.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="K">
+				<div id="option1"><a href="#K" class="wrong">Q</a></div>
+				<div id="option2"><a href="#K"class="correct">K</a></div>
+				<div id="option3"><a href="#K" class="wrong">E</a></div>
+				<div id="next"><a href="#L"class="myButton">Next</a></div>
+				<div id="previous"><a href="#J" class="myButton">Previous</a></div>
+				<div id="image"><img src="k.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="L">
+				<div id="option1"><a href="#L" class="wrong">U</a></div>
+				<div id="option2"><a href="#L" class="wrong">V</a></div>
+				<div id="option3"><a href="#L"class="correct">L</a></div>
+				<div id="next"><a href="#M"class="myButton">Next</a></div>
+				<div id="previous"><a href="#K" class="myButton">Previous</a></div>
+				<div id="image"><img src="l.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="M">
+				<div id="option1"><a href="#M" class="wrong">P</a></div>
+				<div id="option2"><a href="#M"class="correct">M</a></div>
+				<div id="option3"><a href="#M" class="wrong">E</a></div>
+				<div id="next"><a href="#N"class="myButton">Next</a></div>
+				<div id="previous"><a href="#L" class="myButton">Previous</a></div>
+				<div id="image"><img src="m.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="N">
+				<div id="option1"><a href="#N" class="wrong">B</a></div>
+				<div id="option2"><a href="#N" class="wrong">C</a></div>
+				<div id="option3"><a href="#N"class="correct">N</a></div>
+				<div id="next"><a href="#O"class="myButton">Next</a></div>
+				<div id="previous"><a href="#M" class="myButton">Previous</a></div>
+				<div id="image"><img src="ne.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="O">
+				<div id="option1"><a href="#O" class="wrong">J</a></div>
+				<div id="option2"><a href="#O"class="correct">O</a></div>
+				<div id="option3"><a href="#O" class="wrong">L</a></div>
+				<div id="next"><a href="#P"class="myButton">Next</a></div>
+				<div id="previous"><a href="#N" class="myButton">Previous</a></div>
+				<div id="image"><img src="o.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="P">
+				<div id="option1"><a href="#P"class="correct">P</a></div>
+				<div id="option2"><a href="#P" class="wrong">T</a></div>
+				<div id="option3"><a href="#P" class="wrong">E</a></div>
+				<div id="next"><a href="#Q"class="myButton">Next</a></div>
+				<div id="previous"><a href="#O" class="myButton">Previous</a></div>
+				<div id="image"><img src="p.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="Q">
+				<div id="option1"><a href="#Q" class="wrong">K</a></div>
+				<div id="option2"><a href="#Q"class="correct">Q</a></div>
+				<div id="option3"><a href="#Q" class="wrong">R</a></div>
+				<div id="next"><a href="#R"class="myButton">Next</a></div>
+				<div id="previous"><a href="#P" class="myButton">Previous</a></div>
+				<div id="image"><img src="q.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="R">
+				<div id="option1"><a href="#R"class="correct">R</a></div>
+				<div id="option2"><a href="#R" class="wrong">N</a></div>
+				<div id="option3"><a href="#R" class="wrong">O</a></div>
+				<div id="next"><a href="#S"class="myButton">Next</a></div>
+				<div id="previous"><a href="#Q" class="myButton">Previous</a></div>
+				<div id="image"><div id="rectangle"></div></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="S">
+				<div id="option1"><a href="#S" class="wrong">W</a></div>
+				<div id="option2"><a href="#S" class="wrong">V</a></div>
+				<div id="option3"><a href="#S"class="correct">S</a></div>
+				<div id="next"><a href="#T"class="myButton">Next</a></div>
+				<div id="previous"><a href="#R" class="myButton">Previous</a></div>
+				<div id="image"><img src="s.png" height="160" width="160"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="T">
+				<div id="option1"><a href="#T" class="wrong">U</a></div>
+				<div id="option2"><a href="#T"class="correct">T</a></div>
+				<div id="option3"><a href="#T" class="wrong">N</a></div>
+				<div id="next"><a href="#U"class="myButton">Next</a></div>
+				<div id="previous"><a href="#S" class="myButton">Previous</a></div>
+				<div id="image"><img src="t.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="U">
+				<div id="option1"><a href="#U" class="wrong">X</a></div>
+				<div id="option2"><a href="#U" class="wrong">C</a></div>
+				<div id="option3"><a href="#U"class="correct">U</a></div>
+				<div id="next"><a href="#V"class="myButton">Next</a></div>
+				<div id="previous"><a href="#T" class="myButton">Previous</a></div>
+				<div id="image"><img src="u.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="V">
+				<div id="option1"><a href="#V" class="wrong">W</a></div>
+				<div id="option2"><a href="#V" class="wrong">X</a></div>
+				<div id="option3"><a href="#V"class="correct">V</a></div>
+				<div id="next"><a href="#W"class="myButton">Next</a></div>
+				<div id="previous"><a href="#U" class="myButton">Previous</a></div>
+				<div id="image"><img src="v.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="W">
+				<div id="option1"><a href="#W" class="wrong">L</a></div>
+				<div id="option2"><a href="#W"class="correct">W</a></div>
+				<div id="option3"><a href="#W" class="wrong">E</a></div>
+				<div id="next"><a href="#X"class="myButton">Next</a></div>
+				<div id="previous"><a href="#V" class="myButton">Previous</a></div>
+				<div id="image"><img src="w.png" height="160" width="160"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="X">
+				<div id="option1"><a href="#X" class="wrong">W</a></div>
+				<div id="option2"><a href="#X" class="wrong">C</a></div>
+				<div id="option3"><a href="#X"class="correct">X</a></div>
+				<div id="next"><a href="#Y"class="myButton">Next</a></div>
+				<div id="previous"><a href="#W" class="myButton">Previous</a></div>
+				<div id="image"><img src="x.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="Y">
+				<div id="option1"><a href="#Y" class="wrong">B</a></div>
+				<div id="option2"><a href="#Y"class="correct">Y</a></div>
+				<div id="option3"><a href="#Y" class="wrong">A</a></div>
+				<div id="next"><a href="#Z"class="myButton">Next</a></div>
+				<div id="previous"><a href="#X" class="myButton">Previous</a></div>
+				<div id="image"><img src="y.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+			
+			<div class="row" id="Z">
+				<div id="option1"><a href="#Z" class="wrong">L</a></div>
+				<div id="option2"><a href="#Z"class="correct">Z</a></div>
+				<div id="option3"><a href="#Z" class="wrong">A</a></div>
+				<div id="next"><a href="#A"class="myButton">Next</a></div>
+				<div id="previous"><a href="#Y" class="myButton">Previous</a></div>
+				<div id="image"><img src="z.png" height="200" width="200"></div>
+				<div id="text"><b>With which letter it's name starts?</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

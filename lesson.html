@@ -1,0 +1,325 @@
+<!DOCTYPE>
+<html>
+	<head>
+			<title>Alphabet Game</title>
+			<style>
+		body {
+			padding:0;
+			margin:0;
+			overflow-x: hidden;
+		}
+		#image {
+			position:relative;
+			left: 630px; top: 100px;
+		}
+		#text {
+			position:absolute;
+			left: 480px; top: 220px;
+			color:#001f3f;
+			font-family:verdana;
+			font-size:100;
+		}
+		#background { 
+			width: 100%; 
+			height: 100%; 
+			background-image: url("bg1.jpg");
+			background-position: 0px 0px;
+			background-size:100% 100%;
+			background-repeat: repeat-x;
+		}            
+		#next {
+			position:relative;
+			left: 950px; top: 500px;
+			width: 200px;
+		}
+		#previous {
+			position:relative;
+			left: 230px; top: 450px;
+			width: 200px;
+		}
+		#back {
+			position:absolute;
+			left: 10px; top: 75px;
+			width: 200px;
+		}
+		#start {
+			position:absolute;
+			left: 10px; top: 20px;
+			width: 200px;
+		}
+		.circle_green { 
+				position absolute;
+                width:10%;
+                padding:60px 70px;
+                margin:0 auto;
+                border:2px solid #a1a1a1;
+                border-radius:100%;
+                background-color:navy;
+            }
+			
+		#rectangle {
+			width: 200px;
+			height: 100px;
+			background: navy;
+		}
+		
+		#egg {
+		   display:block;
+		   width: 126px;
+		   height: 180px;
+		   background-color: black;
+		   -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+		   border-radius:         50%  50%  50%  50%  / 60%   60%   40%  40%;
+			}
+		
+		
+
+		.myButton {
+			-moz-box-shadow:inset 0px 0px 15px 3px #23395e;
+			-webkit-box-shadow:inset 0px 0px 15px 3px #23395e;
+			box-shadow:inset 0px 0px 15px 3px #23395e;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2e466e), color-stop(1, #415989));
+			background:-moz-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-webkit-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-o-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:-ms-linear-gradient(top, #2e466e 5%, #415989 100%);
+			background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e466e', endColorstr='#415989',GradientType=0);
+			background-color:#2e466e;
+			-moz-border-radius:17px;
+			-webkit-border-radius:17px;
+			border-radius:17px;
+			border:1px solid #1f2f47;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-weight: bold;
+			font-size:16px;
+			padding:16px 30px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #263666;
+
+		}
+		.myButton:hover {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #415989), color-stop(1, #2e466e));
+			background:-moz-linear-gradient(top, #415989 5%, #2e466e 100%);
+			background:-webkit-linear-gradient(top, #415989 5%, #2e466e 100%);
+			background:-o-linear-gradient(top, #415989 5%, #2e466e 100%);
+			background:-ms-linear-gradient(top, #415989 5%, #2e466e 100%);
+			background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#415989', endColorstr='#2e466e',GradientType=0);
+			background-color:#415989;
+		}
+		
+	.row{
+		display: none;
+	}
+
+	.container div:target{
+		display: block;
+	}
+
+		</style>
+	</head>
+	<body>
+		
+	<div id="background">
+		
+		<div id="start"><a href="#A" class="myButton">Start</a></div>
+		<div id="back"><a href="home.html" class="myButton">Back</a></div>
+		
+		<div class="container">
+			<div class="row" id="A">
+				<div id="next"><a href="#B"class="myButton">Next</a></div>
+				<div id="previous"><a href="#Z" class="myButton">Previous</a></div>
+				<div id="image"><img src="a.png" height="200" width="200"></div>
+				<div id="text">A <br><p style="font-size:20">A for Apple</p></div>
+			</div>
+			
+			<div class="row" id="B">
+				<div id="next"><a href="#C"class="myButton">Next</a></div>
+				<div id="previous"><a href="#A" class="myButton">Previous</a></div>
+				<div id="image"><img src="b.png" height="200" width="200"></div>
+				<div id="text">B <br><p style="font-size:20">B for Ball</p></div>
+			</div>
+			
+			<div class="row" id="C">
+				<div id="next"><a href="#D"class="myButton">Next</a></div>
+				<div id="previous"><a href="#B" class="myButton">Previous</a></div>
+				<div id="image">
+							<table>
+							<tr>
+								<td>
+									<div class="circle_green"></div>
+								</td>
+							</tr>
+							</table>
+				</div>
+				<div id="text">C <br><p style="font-size:20">C for Circle</p></div>
+			</div>
+			
+			<div class="row" id="D">
+				<div id="next"><a href="#E"class="myButton">Next</a></div>
+				<div id="previous"><a href="#C" class="myButton">Previous</a></div>
+				<div id="image"><img src="d.png" height="200" width="200"></div>
+				<div id="text">D <br><p style="font-size:20">D for Dog</p></div>
+			</div>
+			
+			<div class="row" id="E">
+				<div id="next"><a href="#F"class="myButton">Next</a></div>
+				<div id="previous"><a href="#D" class="myButton">Previous</a></div>
+				<div id="image"><div id="egg"></div></div>
+				<div id="text">E <br><p style="font-size:20">E for Egg</p></div>
+			</div>
+			
+			<div class="row" id="F">
+				<div id="next"><a href="#G"class="myButton">Next</a></div>
+				<div id="previous"><a href="#E" class="myButton">Previous</a></div>
+				<div id="image"><img src="f.png" height="200" width="200"></div>
+				<div id="text">F <br><p style="font-size:20">F for Fox</p></div>
+			</div>
+			
+			<div class="row" id="G">
+				<div id="next"><a href="#H"class="myButton">Next</a></div>
+				<div id="previous"><a href="#F" class="myButton">Previous</a></div>
+				<div id="image"><img src="g.png" height="200" width="200"></div>
+				<div id="text">G <br><p style="font-size:20">G for Goat</p></div>
+			</div>
+			
+			<div class="row" id="H">
+				<div id="next"><a href="#I"class="myButton">Next</a></div>
+				<div id="previous"><a href="#G" class="myButton">Previous</a></div>
+				<div id="image"><img src="h.png" height="200" width="200"></div>
+				<div id="text">H <br><p style="font-size:20">H for House</p></div>
+			</div>
+			
+			<div class="row" id="I">
+				<div id="next"><a href="#J"class="myButton">Next</a></div>
+				<div id="previous"><a href="#H" class="myButton">Previous</a></div>
+				<div id="image"><img src="i.png" height="200" width="200"></div>
+				<div id="text">I <br><p style="font-size:20">I for Ice-Cream</p></div>
+			</div>
+			
+			<div class="row" id="J">
+				<div id="next"><a href="#K"class="myButton">Next</a></div>
+				<div id="previous"><a href="#I" class="myButton">Previous</a></div>
+				<div id="image"><img src="j.png" height="200" width="200"></div>
+				<div id="text">J <br><p style="font-size:20">J for Jug</p></div>
+			</div>
+			
+			<div class="row" id="K">
+				<div id="next"><a href="#L"class="myButton">Next</a></div>
+				<div id="previous"><a href="#J" class="myButton">Previous</a></div>
+				<div id="image"><img src="k.png" height="200" width="200"></div>
+				<div id="text">K <br><p style="font-size:20">K for King</p></div>
+			</div>
+			
+			<div class="row" id="L">
+				<div id="next"><a href="#M"class="myButton">Next</a></div>
+				<div id="previous"><a href="#K" class="myButton">Previous</a></div>
+				<div id="image"><img src="l.png" height="200" width="200"></div>
+				<div id="text">L <br><p style="font-size:20">L for Lion</p></div>
+			</div>
+			
+			<div class="row" id="M">
+				<div id="next"><a href="#N"class="myButton">Next</a></div>
+				<div id="previous"><a href="#L" class="myButton">Previous</a></div>
+				<div id="image"><img src="m.png" height="200" width="200"></div>
+				<div id="text">M <br><p style="font-size:20">M for Monkey</p></div>
+			</div>
+			
+			<div class="row" id="N">
+				<div id="next"><a href="#O"class="myButton">Next</a></div>
+				<div id="previous"><a href="#M" class="myButton">Previous</a></div>
+				<div id="image"><img src="ne.png" height="200" width="200"></div>
+				<div id="text">N <br><p style="font-size:20">N for Nest</p></div>
+			</div>
+			
+			<div class="row" id="O">
+				<div id="next"><a href="#P"class="myButton">Next</a></div>
+				<div id="previous"><a href="#N" class="myButton">Previous</a></div>
+				<div id="image"><img src="o.png" height="200" width="200"></div>
+				<div id="text">O <br><p style="font-size:20">O for Owl</p></div>
+			</div>
+			
+			<div class="row" id="P">
+				<div id="next"><a href="#Q"class="myButton">Next</a></div>
+				<div id="previous"><a href="#O" class="myButton">Previous</a></div>
+				<div id="image"><img src="p.png" height="200" width="200"></div>
+				<div id="text">P <br><p style="font-size:20">P for Parrot</p></div>
+			</div>
+			
+			<div class="row" id="Q">
+				<div id="next"><a href="#R"class="myButton">Next</a></div>
+				<div id="previous"><a href="#P" class="myButton">Previous</a></div>
+				<div id="image"><img src="q.png" height="200" width="200"></div>
+				<div id="text">Q <br><p style="font-size:20">Q for Queen</p></div>
+			</div>
+			
+			<div class="row" id="R">
+				<div id="next"><a href="#S"class="myButton">Next</a></div>
+				<div id="previous"><a href="#Q" class="myButton">Previous</a></div>
+				<div id="image"><div id="rectangle"></div></div>
+				<div id="text">R <br><p style="font-size:20">R for Rectangle</p></div>
+			</div>
+			
+			<div class="row" id="S">
+				<div id="next"><a href="#T"class="myButton">Next</a></div>
+				<div id="previous"><a href="#R" class="myButton">Previous</a></div>
+				<div id="image"><img src="s.png" height="200" width="200"></div>
+				<div id="text">S <br><p style="font-size:20">S for Snake</p></div>
+			</div>
+			
+			<div class="row" id="T">
+				<div id="next"><a href="#U"class="myButton">Next</a></div>
+				<div id="previous"><a href="#S" class="myButton">Previous</a></div>
+				<div id="image"><img src="t.png" height="200" width="200"></div>
+				<div id="text">T <br><p style="font-size:20">T for Tiger</p></div>
+			</div>
+			
+			<div class="row" id="U">
+				<div id="next"><a href="#V"class="myButton">Next</a></div>
+				<div id="previous"><a href="#T" class="myButton">Previous</a></div>
+				<div id="image"><img src="u.png" height="200" width="200"></div>
+				<div id="text">U <br><p style="font-size:20">U for Umbrella</p></div>
+			</div>
+			
+			<div class="row" id="V">
+				<div id="next"><a href="#W"class="myButton">Next</a></div>
+				<div id="previous"><a href="#U" class="myButton">Previous</a></div>
+				<div id="image"><img src="v.png" height="200" width="200"></div>
+				<div id="text">V <br><p style="font-size:20">V for Vegetables</p></div>
+			</div>
+			
+			<div class="row" id="W">
+				<div id="next"><a href="#X"class="myButton">Next</a></div>
+				<div id="previous"><a href="#V" class="myButton">Previous</a></div>
+				<div id="image"><img src="w.png" height="200" width="200"></div>
+				<div id="text">W <br><p style="font-size:20">W for Watch</p></div>
+			</div>
+			
+			<div class="row" id="X">
+				<div id="next"><a href="#Y"class="myButton">Next</a></div>
+				<div id="previous"><a href="#W" class="myButton">Previous</a></div>
+				<div id="image"><img src="x.png" height="200" width="200"></div>
+				<div id="text">X <br><p style="font-size:20">X for Xmos</p></div>
+			</div>
+			
+			<div class="row" id="Y">
+				<div id="next"><a href="#Z"class="myButton">Next</a></div>
+				<div id="previous"><a href="#X" class="myButton">Previous</a></div>
+				<div id="image"><img src="y.png" height="200" width="200"></div>
+				<div id="text">Y <br><p style="font-size:20">Y for Yok</p></div>
+			</div>
+			
+			<div class="row" id="Z">
+				<div id="next"><a href="#A"class="myButton">Next</a></div>
+				<div id="previous"><a href="#Y" class="myButton">Previous</a></div>
+				<div id="image"><img src="z.png" height="200" width="200"></div>
+				<div id="text">Z <br><p style="font-size:20">Z for Zebra</p></div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
